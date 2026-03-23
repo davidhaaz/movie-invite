@@ -1,0 +1,218 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f8f3e6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 50px;
+    min-height: 100vh;
+    margin: 0;
+    color: #111;
+}
+
+.container {
+    background-color: #fffdf7;
+    border: 1px solid #b39b72;
+    max-width: 900px;
+    width: 94%;
+    padding: 30px 40px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #120a00;
+    text-transform: uppercase;
+}
+
+.container::after {
+    content: 'ISSUE NO. 352 | Monday, March 23rd - 2026';
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 12px;
+    color: #5e4e3f;
+    font-style: italic;
+}
+
+h1 {
+    margin-top: 70px;
+    text-align: center;
+    font-size: 2.7rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+}
+
+p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0 0 1rem;
+}
+
+.text-columns {
+    column-count: 2;
+    column-gap: 35px;
+}
+
+.text-columns p {
+    margin-bottom: 0.9rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+}
+
+.invitation-text {
+    text-align: justify;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 15px auto;
+    max-width: 90%;
+    font-weight: bold;
+}
+
+.centered {
+    text-align: center;
+}
+
+.synopsis {
+    text-align: center;
+    text-align: justify;
+    color: #333;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 15px auto;
+    max-width: 90%;
+}
+
+.poster {
+    display: block;
+    margin: 20px auto;
+    max-width: 250px;
+    height: auto;
+    border: 2px solid #b39b72;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding-top: 20px;
+    }
+
+    .container {
+        width: 98%;
+        padding: 20px 15px 30px;
+        max-width: none;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .poster {
+        max-width: 200px;
+    }
+
+    .invitation-text, .synopsis {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+.buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 22px;
+    border-radius: 4px;
+    border: 2px solid #333;
+    background: #fff;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #333;
+    color: #fff;
+}
+
+#yes-btn {
+    border-color: #7a9b7e;
+    background: #e6f0e8;
+}
+
+#yes-btn:hover {
+    background: #7a9b7e;
+    color: #fff;
+    border-color: #7a9b7e;
+}
+
+#no-btn {
+    border-color: #a67c7c;
+    background: #f0e6e6;
+}
+
+#no-btn:hover {
+    background: #a67c7c;
+    color: #fff;
+    border-color: #a67c7c;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#yes-btn {
+    background-color: #71b97a;
+    color: white;
+}
+
+#no-btn {
+    background-color: #ce4b41;
+    color: white;
+    position: relative;
+}
+
+#synopsis {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
