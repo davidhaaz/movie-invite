@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Night Invitation</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container" data-date="March 23, 2026">
         <h1>Movie Night Invitation: "Emma"</h1>
-        <img src="emma-2020.webp" alt="Emma Movie Poster" class="poster">
+        <img src="emma-2020.webp" alt="Emma Movie Poster" class="poster" loading="lazy">
         <p class="invitation-text centered">Naomi, you are kindly invited to watch "Emma".</br> Please reply to this invite if you would attend the screening of the film.</p>
         <p class="synopsis">Based on Jane Austen's classic novel, Emma (notably the 2020 adaptation) follows Emma Woodhouse (Anya Taylor-Joy), a rich, clever, and restless young woman in 1800s England who meddles in her friends' love lives. As a self-proclaimed matchmaker, she causes romantic missteps before discovering her own love for Mr. Knightley.</p>
         <p class="invitation-text">Location: Depa · Time: 6:00 PM · Date: April 26th, 2026</p>
@@ -18,7 +20,7 @@
             <button id="no-btn">No, thanks</button>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="script.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>
