@@ -133,13 +133,25 @@ p {
 
     .buttons {
         flex-direction: column;
-        gap: 15px;
+        gap: 25px;
+        padding: 20px 0;
     }
 
     button {
         width: 100%;
-        padding: 12px;
+        padding: 18px 15px;
         font-size: 16px;
+        min-height: 50px;
+        position: relative;
+        z-index: 10;
+    }
+
+    #no-btn {
+        order: 2;
+    }
+
+    #yes-btn {
+        order: 1;
     }
 }
 

@@ -24,15 +24,18 @@ noBtn.addEventListener('mouseover', () => {
 
 noBtn.addEventListener('touchstart', (e) => {
     e.preventDefault();
+    e.stopPropagation();
     isMoving = true;
     moveButton();
     
     // Temporarily disable pointer events to prevent accidental clicks
     noBtn.style.pointerEvents = 'none';
+    yesBtn.style.pointerEvents = 'none';
     setTimeout(() => {
         noBtn.style.pointerEvents = 'auto';
+        yesBtn.style.pointerEvents = 'auto';
         isMoving = false;
-    }, 300);
+    }, 400);
 });
 
 noBtn.addEventListener('click', (e) => {
