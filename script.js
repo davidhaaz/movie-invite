@@ -1,53 +1,47 @@
 const noBtn = document.getElementById('no-btn');
 const yesBtn = document.getElementById('yes-btn');
+let isMoving = false;
+
+function moveButton() {
+    const container = document.querySelector('.container');
+    const containerRect = container.getBoundingClientRect();
+    const btnRect = noBtn.getBoundingClientRect();
+
+    const maxX = containerRect.width - btnRect.width;
+    const maxY = containerRect.height - btnRect.height;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.position = 'absolute';
+    noBtn.style.left = randomX + 'px';
+    noBtn.style.top = randomY + 'px';
+}
 
 noBtn.addEventListener('mouseover', () => {
-    const container = document.querySelector('.container');
-    const containerRect = container.getBoundingClientRect();
-    const btnRect = noBtn.getBoundingClientRect();
-
-    const maxX = containerRect.width - btnRect.width;
-    const maxY = containerRect.height - btnRect.height;
-
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-
-    noBtn.style.position = 'absolute';
-    noBtn.style.left = randomX + 'px';
-    noBtn.style.top = randomY + 'px';
+    moveButton();
 });
 
-noBtn.addEventListener('touchstart', () => {
-    const container = document.querySelector('.container');
-    const containerRect = container.getBoundingClientRect();
-    const btnRect = noBtn.getBoundingClientRect();
-
-    const maxX = containerRect.width - btnRect.width;
-    const maxY = containerRect.height - btnRect.height;
-
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-
-    noBtn.style.position = 'absolute';
-    noBtn.style.left = randomX + 'px';
-    noBtn.style.top = randomY + 'px';
+noBtn.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    isMoving = true;
+    moveButton();
+    
+    // Temporarily disable pointer events to prevent accidental clicks
+    noBtn.style.pointerEvents = 'none';
+    setTimeout(() => {
+        noBtn.style.pointerEvents = 'auto';
+        isMoving = false;
+    }, 300);
 });
 
-noBtn.addEventListener('click', () => {
-    // Randomize position on click too
-    const container = document.querySelector('.container');
-    const containerRect = container.getBoundingClientRect();
-    const btnRect = noBtn.getBoundingClientRect();
-
-    const maxX = containerRect.width - btnRect.width;
-    const maxY = containerRect.height - btnRect.height;
-
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-
-    noBtn.style.position = 'absolute';
-    noBtn.style.left = randomX + 'px';
-    noBtn.style.top = randomY + 'px';
+noBtn.addEventListener('click', (e) => {
+    if (isMoving) {
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    }
+    moveButton();
 });
 
 yesBtn.addEventListener('click', () => {
